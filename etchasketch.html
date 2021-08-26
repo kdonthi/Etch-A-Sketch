@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #blockContainer {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        background-color: lightblue;
+      }
+      .tile {
+        margin: 10px;
+        background-color: white;
+        width: 24%;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="blockContainer"></div>
+  <script>
+    let blockContainer = document.getElementById("blockContainer");
+
+    for (let i = 1; i <= 16; i++) {
+      let newElement = document.createElement("div");
+      newElement.width = "25%";
+      newElement.height = "25%";
+      newElement.classList.add("tile");
+      newElement.style.position = "relative";
+      newElement.style.display = "inline-block";
+      blockContainer.appendChild(newElement);
+    }
+
+    let tiles = document.getElementsByClassName("tile");
+    let tileLength = tiles.length;
+    for (let i = 0; i < tileLength; i++) {
+      tiles[i].addEventListener("mouseover", () => {
+        tiles[i].style.backgroundColor = "blue";
+      });
+      
+      /*tiles[i].addEventListener("mouseleave", () => {
+        tiles[i].style.backgroundColor = "white";
+      });*/
+    }
+  </script>
+  </body>
+</html>
